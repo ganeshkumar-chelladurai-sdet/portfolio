@@ -1,180 +1,686 @@
-<!-- TODO 1: Create the HTML Boilerplate -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap">
-    <style>
-      /* Body font + LinkedIn theme */
-      body {
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 300;
-        font-size: 20px;
-        background-color: #F3F6F8;  /* Light gray background */
-        color: #333333;             /* Main text color */
-        margin: 0;
-        padding: 20px;
-      }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-      h1, h2 {
-        color: #0077B5;             /* LinkedIn dark blue for headings */
-      }
+<title>Ganeshkumar Chelladurai — Senior SDET &amp; QA Automation Engineer</title>
+<meta name="description" content="Senior SDET with 9+ years building test automation across UI, API, performance and ETL. Selenium, Playwright, REST Assured, JMeter, Jenkins. Based in Dublin, Ireland.">
+<meta name="author" content="Ganeshkumar Chelladurai">
+<meta name="theme-color" content="#080B11" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FBFCFD" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://ganeshkumar-chelladurai-sdet.github.io/portfolio/">
 
-      a {
-        color: #00A0DC;             /* LinkedIn light blue for links */
-        text-decoration: none;
-      }
+<!-- Open Graph / LinkedIn / Twitter -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Ganeshkumar Chelladurai — Senior SDET &amp; QA Automation Engineer">
+<meta property="og:description" content="9+ years building test automation across UI, API, performance and ETL. Dublin, Ireland.">
+<meta property="og:url" content="https://ganeshkumar-chelladurai-sdet.github.io/portfolio/">
+<meta property="og:image" content="https://ganeshkumar-chelladurai-sdet.github.io/portfolio/assets/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ganeshkumar Chelladurai, Senior SDET and QA Automation Engineer, Dublin, Ireland">
+<meta property="profile:first_name" content="Ganeshkumar">
+<meta property="profile:last_name" content="Chelladurai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ganeshkumar Chelladurai — Senior SDET">
+<meta name="twitter:description" content="9+ years building test automation across UI, API, performance and ETL. Dublin, Ireland.">
+<meta name="twitter:image" content="https://ganeshkumar-chelladurai-sdet.github.io/portfolio/assets/img/og-cover.jpg">
 
-      a:hover {
-        text-decoration: underline;
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232DD4BF'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='30' font-weight='700' text-anchor='middle' fill='%23062B28'%3EGC%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="./assets/css/style.css">
+
+<script>
+  // Set the theme before first paint so there is no flash.
+  (function () {
+    try {
+      var saved = localStorage.getItem('gc-theme');
+      if (saved === 'light' || saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', saved);
+      } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
       }
-    </style>
-    <title>Ganeshkumar Chelladurai's Portfolio</title>
+    } catch (e) { /* storage blocked — keep the dark default */ }
+
+    // Reveal-on-scroll is opt-in: without this class every .reveal stays visible,
+    // so the page still reads correctly with no JS at all.
+    var root = document.documentElement;
+    root.classList.add('js-reveal');
+
+    // Watchdog: if nothing has revealed after 4s the observer isn't reporting
+    // (background tab, blocked main.js, no IntersectionObserver) — show everything.
+    window.setTimeout(function () {
+      if (!document.querySelector('.reveal.is-in')) root.classList.remove('js-reveal');
+    }, 4000);
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ganeshkumar Chelladurai",
+  "jobTitle": "Senior Software Development Engineer in Test",
+  "description": "Senior SDET with 9+ years building test automation across UI, API, performance and ETL.",
+  "email": "mailto:ganeshkumar.chelladurai.sdet@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Dublin", "addressCountry": "IE" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Dublin City University" },
+    { "@type": "CollegeOrUniversity", "name": "PSNA College of Engineering and Technology" }
+  ],
+  "knowsAbout": ["Test Automation", "Selenium", "Playwright", "REST Assured", "JMeter", "ETL Testing", "Jenkins", "Python", "Java"],
+  "sameAs": [
+    "https://www.linkedin.com/in/ganeshkumar-chelladurai-sdet/",
+    "https://github.com/ganeshkumar-chelladurai-sdet"
+  ]
+}
+</script>
 </head>
-<body>    
-    <h1>Ganeshkumar Chelladurai's Portfolio</h2>
-    <h2>Senior QA Engineer | SDET | Test Automation Specialist | MEng (IoT)</h3>
-    <p>Building scalable, reliable, and intelligent test automation for modern systems.</p>
-    <a href="./public/Resume.pdf">Download CV</a>
 
-    <h1>About Me</h1>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
 
-<img src="./assets/images/About Me.png" width="938" height="512">
+<!-- ============ Icon sprite ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol viewBox="0 0 24 24" id="i-mail"><path d="M2 5h20v14H2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m2 6 10 7 10-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-linkedin"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5M2.5 9.5h5V21h-5zM10 9.5h4.8v1.6a5 5 0 0 1 4.3-2.1c3 0 4.4 1.9 4.4 5.3V21h-5v-5.6c0-1.5-.5-2.5-1.9-2.5-1 0-1.7.7-2 1.4-.1.3-.1.7-.1 1V21h-4.5z" fill="currentColor"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-github"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48l-.01-1.69c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85l-.01 2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2" fill="currentColor"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-pin"><path d="M12 22s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-download"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-arrow"><path d="M4 12h15m0 0-6-6m6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-sun"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-moon"><path d="M21 13.2A9 9 0 1 1 10.8 3a7 7 0 0 0 10.2 10.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-menu"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-award"><circle cx="12" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m8.2 14.2-1.4 7 5.2-2.8 5.2 2.8-1.4-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-code"><path d="m8 6-6 6 6 6M16 6l6 6-6 6M14 3l-4 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-api"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-db"><ellipse cx="12" cy="6" rx="8" ry="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 6v12c0 1.8 3.6 3.2 8 3.2s8-1.4 8-3.2V6M4 12c0 1.8 3.6 3.2 8 3.2s8-1.4 8-3.2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-cicd"><path d="M20 11A8 8 0 0 0 6.3 6.3L4 8.5M4 13a8 8 0 0 0 13.7 4.7L20 15.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4 4v4.5h4.5M20 20v-4.5h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-spark"><path d="m12 3 2.1 5.6L20 10.7l-5.9 2.1L12 18.4l-2.1-5.6L4 10.7l5.9-2.1zM19 3v3M20.5 4.5h-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-book"><path d="M4 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H4zM20 4h-6a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H20z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-cap"><path d="m12 4 10 5-10 5L2 9zM6 11.5V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-chip"><rect x="7" y="7" width="10" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol viewBox="0 0 24 24" id="i-brain"><path d="M9.5 3A3.5 3.5 0 0 0 6 6.5 3 3 0 0 0 4 9.3a3 3 0 0 0 1.2 2.4A3 3 0 0 0 4 14.2a3 3 0 0 0 2.3 2.9A3.5 3.5 0 0 0 12 19V5a2 2 0 0 0-2.5-2M14.5 3A3.5 3.5 0 0 1 18 6.5a3 3 0 0 1 2 2.8 3 3 0 0 1-1.2 2.4A3 3 0 0 1 20 14.2a3 3 0 0 1-2.3 2.9A3.5 3.5 0 0 1 12 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
 
-<p>
-I am a Senior QA Engineer and SDET with over 9 years of experience delivering high-quality, scalable software across diverse domains. My expertise spans UI automation, API testing, performance engineering, and backend/ETL validation, with a strong focus on building robust automation frameworks that integrate seamlessly into CI/CD pipelines.
-</p>
+<!-- ============ Header ============ -->
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">GC</span>
+      <span class="brand-text">Ganeshkumar <span>Chelladurai</span></span>
+    </a>
 
-<p>
-Over the years, I have worked closely with developers, architects, and product teams to ensure reliability at every layer of the system. This hands-on industry experience motivated me to deepen my technical foundation beyond testing and move into data-driven and connected systems.
-</p>
+    <nav class="nav" id="site-nav" aria-label="Section navigation">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-<p>
-Currently, I am pursuing a Master of Engineering in Electronic & Computer Engineering (IoT) at Dublin City University. My goal is to bridge quality engineering with data analysis, machine learning, and IoT security—combining practical QA expertise with advanced engineering knowledge to contribute to next-generation, intelligent software systems.
-</p>
+    <button class="icon-btn theme-toggle" type="button" aria-label="Switch to light theme">
+      <svg class="sun" aria-hidden="true"><use href="#i-sun"/></svg>
+      <svg class="moon" aria-hidden="true"><use href="#i-moon"/></svg>
+    </button>
 
-<h1>Skills & Tech Stack</h1>
-<img src="./assets/images/QA IoT and Data.png" width="600" height="600">
-<h2>UI Automation</h2>
-<ul>
-  <li>Tools: Selenium, Cypress, Appium</li>
-  <li>Frameworks: TestNG, Page Object Model (POM), BDD (Cucumber)</li>
-  <li>Use Cases: Cross-browser testing, mobile automation, responsive UI validation</li>
-</ul>
-
-<h2>API Testing & Automation</h2>
-<ul>
-  <li>Tools: Postman, SoapUI, REST Assured</li>
-  <li>Frameworks: REST Assured + TestNG</li>
-  <li>Use Cases: Contract testing, API chaining, JSON/XML validation</li>
-</ul>
-
-<h2>Performance Testing</h2>
-<ul>
-  <li>Tool: Apache JMeter</li>
-  <li>Integration: Jenkins CI</li>
-  <li>Use Cases: Load testing, stress testing, scalability and bottleneck analysis</li>
-</ul>
-
-<h2>ETL / Backend Testing</h2>
-<ul>
-  <li>Tools: Ab Initio, Express&gt;IT, SQL</li>
-  <li>Frameworks: Custom SQL-based ETL validation frameworks</li>
-  <li>Use Cases: Source-to-target validation, data pipeline testing, shell scripting</li>
-</ul>
-
-<h2>Cloud & DevOps</h2>
-<ul>
-  <li>Cloud: AWS (Cloud Practitioner)</li>
-  <li>CI/CD: Jenkins, Git</li>
-  <li>Use Cases: Test automation pipelines, scheduled regression, reporting</li>
-</ul>
-
-<h1>Projects / Case Studies</h1>
-<img src="./assets/images/Test Automation Framework.png" width="600" height="600">
-<!-- Project 1 -->
-<h2>Scalable Selenium + Cypress Hybrid Framework</h2>
-<p><strong>Problem:</strong> Manual regression was slow and error-prone for a complex web application.</p>
-<p><strong>Tech Stack:</strong> Selenium, Cypress, TestNG, Jenkins CI</p>
-<p><strong>Role:</strong> Designed and implemented a hybrid automation framework integrating Selenium and Cypress.</p>
-<p><strong>Result:</strong> Reduced regression execution time by 60% and increased test coverage across UI layers.</p>
-
-<!-- Project 2 -->
-<h2>REST Assured API Automation with Contract Testing</h2>
-<p><strong>Problem:</strong> API endpoints lacked automated validation, causing frequent integration defects.</p>
-<p><strong>Tech Stack:</strong> REST Assured, TestNG, Postman</p>
-<p><strong>Role:</strong> Developed API test automation suite with contract validation and JSON/XML assertions.</p>
-<p><strong>Result:</strong> Identified critical API bugs early and improved integration reliability by 40%.</p>
-
-<!-- Project 3 -->
-<h2>JMeter Performance Suite Integrated with Jenkins</h2>
-<p><strong>Problem:</strong> System performance under load was inconsistent and hard to measure.</p>
-<p><strong>Tech Stack:</strong> JMeter, Jenkins CI</p>
-<p><strong>Role:</strong> Built automated performance test pipelines integrated with CI/CD.</p>
-<p><strong>Result:</strong> Enabled continuous load testing and proactive performance monitoring before releases.</p>
-
-<!-- Project 4 -->
-<h2>ETL Data Validation Framework</h2>
-<p><strong>Problem:</strong> Data inconsistencies between source and target caused reporting errors.</p>
-<p><strong>Tech Stack:</strong> SQL, Shell Scripting, Ab Initio</p>
-<p><strong>Role:</strong> Designed automated ETL validation framework with source-to-target mapping checks.</p>
-<p><strong>Result:</strong> Reduced manual ETL validation effort by 70% and ensured data integrity across pipelines.</p>
-
-<!-- Project 5 -->
-<h2>Academic IoT Project: Sensor Data + ML Analysis</h2>
-<p><strong>Problem:</strong> IoT sensor data needed predictive insights for decision-making.</p>
-<p><strong>Tech Stack:</strong> IoT Sensors, Python, Machine Learning, Pandas, Matplotlib</p>
-<p><strong>Role:</strong> Collected, cleaned, and analyzed sensor data; built predictive models to detect anomalies.</p>
-<p><strong>Result:</strong> Achieved 85% prediction accuracy and created a reusable data pipeline for future experiments.</p>
-
-
-<h1>Certifications & Achievements</h1>
-
-<div class="certifications">
-  <!-- Certification Card 1 -->
-  <div class="cert-card">
-    <h3>ISTQB Certified Tester – Foundation Level (CTFL v4.0)</h3>
-    <img src="./assets/images/ISTQB Certification CFTL V4.jpg" width="800" height="600">
-    <p>Recognized for foundational expertise in software testing principles, techniques, and best practices.</p>
+    <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
+      <svg aria-hidden="true"><use href="#i-menu"/></svg>
+    </button>
   </div>
+</header>
 
-  <!-- Certification Card 2 -->
-  <div class="cert-card">
-    <h3>AWS Certified Cloud Practitioner</h3>
-    <img src="./assets/images/AWS Cloud Practitioner.jpg" width="800" height="600">
-    <p>Validated understanding of cloud concepts, AWS services, security, and architecture best practices.</p>
+<main id="main">
+
+<!-- ============ Hero ============ -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="container hero-grid">
+    <div>
+      <p class="badge reveal"><span class="dot" aria-hidden="true"></span> Open to SDET &amp; QA Automation roles</p>
+
+      <h1 class="reveal">Ganeshkumar Chelladurai</h1>
+      <p class="hero-role reveal">Senior SDET &middot; QA Automation Engineer</p>
+
+      <p class="hero-sub reveal">
+        9+ years building test automation across UI, API, performance and data pipelines —
+        and wiring it all into CI/CD so quality shows up on every commit, not just before release.
+      </p>
+
+      <p class="hero-meta reveal">
+        <span><svg aria-hidden="true"><use href="#i-pin"/></svg> Dublin, Ireland</span>
+        <span><svg aria-hidden="true"><use href="#i-cap"/></svg> MEng IoT, Dublin City University</span>
+        <span><svg aria-hidden="true"><use href="#i-award"/></svg> ISTQB CTFL &middot; AWS CCP</span>
+      </p>
+
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="#projects">
+          View my work <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="./public/Resume.pdf" download>
+          <svg aria-hidden="true"><use href="#i-download"/></svg> Download CV
+        </a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/ganeshkumar-chelladurai-sdet/" target="_blank" rel="noopener noreferrer">
+          <svg aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/ganeshkumar-chelladurai-sdet" target="_blank" rel="noopener noreferrer">
+          <svg aria-hidden="true"><use href="#i-github"/></svg> GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="terminal reveal" role="img" aria-label="Simulated terminal showing a regression suite of six tests passing in 6.65 seconds, with coverage up 30 percent, manual effort down 50 percent and release cycle time down 20 percent.">
+      <div class="terminal-bar" aria-hidden="true">
+        <i></i><i></i><i></i>
+        <span class="terminal-title">regression-suite — zsh</span>
+      </div>
+      <!-- Final state is rendered server-side; main.js replays it as an animation. -->
+      <div class="terminal-body" id="terminal-body" aria-hidden="true"><span class="ln t-prompt">$ mvn -q test -Dsuite=regression</span><span class="ln">&nbsp;</span><span class="ln t-dim">SeleniumLoginFramework :: parallel(4)</span><span class="ln t-pass">  PASS  valid credentials        0.84s</span><span class="ln t-pass">  PASS  invalid password         0.61s</span><span class="ln t-pass">  PASS  auto-redirect dialog     1.12s</span><span class="ln t-pass">  PASS  role dropdown select     0.73s</span><span class="ln">&nbsp;</span><span class="ln t-prompt">$ pytest -q api/ etl/</span><span class="ln t-pass">  PASS  api contract + chaining  1.30s</span><span class="ln t-pass">  PASS  etl source-to-target     2.05s</span><span class="ln">&nbsp;</span><span class="ln t-key">Tests: 6 passed, 6 total   Time: 6.65s</span><span class="ln t-warn">Coverage +30%  Manual -50%  Release -20%</span><span class="ln">&nbsp;</span><span class="ln t-prompt">$ open-to-work --loc &quot;Dublin, IE&quot; --remote</span></div>
+    </div>
   </div>
+</section>
 
-  <!-- Certification Card 3 -->
-  <div class="cert-card">
-    <h3>Internal Awards & Recognitions</h3>
-    <img src="./assets/images/Award.jpg" width="800" height="600">
-    <p>Awarded for excellence in automation framework design and contribution to QA process improvements.</p>
+<!-- ============ Stats ============ -->
+<section class="section" style="padding-top:0" aria-label="Career highlights">
+  <div class="container">
+    <div class="stats reveal">
+      <div class="stat">
+        <div class="stat-num"><span data-count="9">9</span><sup>+</sup></div>
+        <div class="stat-label">Years in QA &amp; test automation</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span data-count="30" data-suffix="%">30%</span></div>
+        <div class="stat-label">Higher regression coverage</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span data-count="50" data-suffix="%">50%</span></div>
+        <div class="stat-label">Less manual testing effort</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span data-count="20" data-suffix="%">20%</span></div>
+        <div class="stat-label">Faster release cycles</div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-<h1>Contact Me</h1>
-<p>Ph: +353-0894469648</p>
-<p>Email: ganeshkumar.chelladurai.sdet@gmail.com</p>
-<p>Address:</p>
-<p>
-  Sandyford Business Park,<br />
-  Dublin 18,<br />
-  Ireland. <br />
-</p>
+<!-- ============ About ============ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-num">About</p>
+      <h2>Quality engineering, from the UI down to the data</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-prose reveal">
+        <p>
+          I'm a <strong>Senior SDET with 9+ years</strong> building test automation across UI, API,
+          performance and data pipelines. At <strong>TransUnion</strong> I designed automation frameworks
+          for UI, API and ETL testing, integrated them into Jenkins CI/CD, and led a small team of engineers.
+        </p>
+        <p>
+          I've just completed an <strong>MEng in Electronic &amp; Computer Engineering (IoT)</strong> at
+          Dublin City University, with a dissertation on AI-based preventive knee monitoring using
+          wearable sensors. Alongside it I build open-source test frameworks in Java/Selenium and
+          Python/PyTest.
+        </p>
+        <p>
+          Day to day I lean on <strong>GitHub Copilot with Playwright MCP, Claude Code and n8n</strong>
+          to speed up test design and automation workflows — using AI where it genuinely shortens the
+          loop between a requirement and a running, trustworthy test.
+        </p>
+      </div>
+
+      <div class="about-aside">
+        <div class="card reveal">
+          <p class="aside-label">Where I add value</p>
+          <ul class="aside-list">
+            <li>Framework design that survives real teams and real CI</li>
+            <li>Full-stack coverage: UI, API, performance, ETL</li>
+            <li>Mentoring and test strategy for small squads</li>
+            <li>AI-assisted test design that stays reviewable</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <p class="aside-label">Currently</p>
+          <ul class="aside-list">
+            <li>Building a Selenium framework in public on GitHub</li>
+            <li>Extending the Python + PyTest testing portfolio</li>
+            <li>Open to roles across Ireland, on-site or remote</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Experience ============ -->
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-num">Experience</p>
+      <h2>Nine years shipping tested software</h2>
+      <p>From ETL and data warehousing at Cognizant to owning automation strategy and leading engineers at TransUnion.</p>
+    </div>
+
+    <div class="timeline">
+      <article class="tl-item reveal">
+        <div class="card">
+          <div class="tl-head">
+            <h3>Senior Software Development Engineer in Test</h3>
+            <span class="tl-when">Oct 2019 &ndash; Aug 2025</span>
+          </div>
+          <p class="tl-org">TransUnion</p>
+          <p class="tl-where">Chennai, India &middot; Agile / Scrum</p>
+          <ul class="tl-list">
+            <li>Designed automation frameworks for UI, API and ETL testing, improving regression coverage by <strong>~30%</strong></li>
+            <li>Integrated test suites into Jenkins CI/CD, reducing release cycle time by <strong>~20%</strong></li>
+            <li>Automated web and backend test suites, cutting manual testing effort by <strong>~50%</strong></li>
+            <li>Improved ETL validation efficiency by <strong>~25%</strong> using Ab Initio and SQL</li>
+            <li>Ran API and database validation with REST Assured, Postman and SQL</li>
+            <li><strong>Led 3&ndash;4 engineers (2023&ndash;2025)</strong> across test strategy, task assignment and debugging support; recruited and trained a new team member</li>
+            <li>Handled Kafka configuration and integration work</li>
+            <li>Used AI/LLM tooling for test case generation, test data preparation and documentation</li>
+          </ul>
+          <div class="chip-row" style="margin-top:18px">
+            <span class="chip">Selenium</span><span class="chip">REST Assured</span><span class="chip">TestNG</span>
+            <span class="chip">Jenkins</span><span class="chip">Ab Initio</span><span class="chip">Kafka</span><span class="chip">SQL</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item reveal">
+        <div class="card">
+          <div class="tl-head">
+            <h3>Associate</h3>
+            <span class="tl-when">Sep 2015 &ndash; Oct 2019</span>
+          </div>
+          <p class="tl-org">Cognizant</p>
+          <p class="tl-where">Chennai, India &middot; Waterfall delivery</p>
+          <ul class="tl-list">
+            <li>Built and validated ETL workflows and data pipelines with <strong>~99% data integrity</strong></li>
+            <li>Worked on data warehousing and migration projects, improving data accuracy by <strong>~40%</strong></li>
+            <li>Carried out backend validation, SQL testing and system integration testing</li>
+            <li>Supported release cycles, defect tracking and production validation</li>
+          </ul>
+          <div class="chip-row" style="margin-top:18px">
+            <span class="chip">SQL</span><span class="chip">ETL</span><span class="chip">Data Warehousing</span>
+            <span class="chip">Autosys</span><span class="chip">Control-M</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Projects ============ -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-num">Projects</p>
+      <h2>Frameworks and research, built in the open</h2>
+      <p>Two open-source automation frameworks and two academic projects from the MEng at DCU.</p>
+    </div>
+
+    <div class="projects">
+      <article class="card project reveal">
+        <div class="project-top">
+          <span class="project-icon" aria-hidden="true"><svg><use href="#i-code"/></svg></span>
+          <div>
+            <h3>Selenium Login Framework</h3>
+            <span class="project-kind">Open source &middot; Java</span>
+          </div>
+        </div>
+        <p>A parallel-safe UI automation framework built from first principles, one layer at a time.</p>
+        <ul class="project-points">
+          <li><strong>ThreadLocal DriverFactory</strong> for parallel-safe browser sessions</li>
+          <li>ConfigReader and a TestNG DataProvider utility</li>
+          <li>Page Object Model: <code>LoginPage</code>, <code>ConfirmationDialogPage</code></li>
+          <li>Explicit waits for an auto-redirect dialog; <code>Select</code> handling for role dropdowns</li>
+        </ul>
+        <div class="progress" aria-hidden="true"><i data-pct="60"></i></div>
+        <div class="chip-row" style="margin-bottom:16px">
+          <span class="chip chip-accent">Java 21</span><span class="chip">Selenium 4.47</span>
+          <span class="chip">TestNG 7.12</span><span class="chip">WebDriverManager 6.3.4</span><span class="chip">Maven</span>
+        </div>
+        <div class="project-foot">
+          <span class="status">Parts 6 / 10 &middot; WaitUtils next</span>
+          <a class="project-link" href="https://github.com/ganeshkumar-chelladurai-sdet/SeleniumLoginFramework" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#i-github"/></svg> Repo
+          </a>
+        </div>
+      </article>
+
+      <article class="card project reveal">
+        <div class="project-top">
+          <span class="project-icon" aria-hidden="true"><svg><use href="#i-api"/></svg></span>
+          <div>
+            <h3>Python Testing Portfolio</h3>
+            <span class="project-kind">Open source &middot; Python</span>
+          </div>
+        </div>
+        <p>UI, API and ETL/data-pipeline testing in one repo, built out across five sprints using nothing but Python and PyTest.</p>
+        <ul class="project-points">
+          <li>Sprint 1 — Setup and project scaffolding</li>
+          <li>Sprint 2 — UI testing</li>
+          <li>Sprint 3 — API testing</li>
+          <li>Sprint 4 — ETL / data pipeline validation</li>
+          <li>Sprint 5 — Integration</li>
+        </ul>
+        <div class="chip-row" style="margin-bottom:16px">
+          <span class="chip chip-accent">Python</span><span class="chip">PyTest</span>
+        </div>
+        <div class="project-foot">
+          <span class="status">Public &middot; build in progress</span>
+          <a class="project-link" href="https://github.com/ganeshkumar-chelladurai-sdet/python-testing-portfolio" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#i-github"/></svg> Repo
+          </a>
+        </div>
+      </article>
+
+      <article class="card project reveal">
+        <div class="project-top">
+          <span class="project-icon" aria-hidden="true"><svg><use href="#i-chip"/></svg></span>
+          <div>
+            <h3>AI-Based Preventive Knee Monitoring</h3>
+            <span class="project-kind">MEng dissertation &middot; DCU</span>
+          </div>
+        </div>
+        <p>Wearable-sensor research into catching knee problems before they become injuries.</p>
+        <ul class="project-points">
+          <li>Fabrigami TENG sensor for self-powered wearable sensing</li>
+          <li>AI/ML biomechanics pipeline over the captured signal</li>
+          <li>Aimed at preventive rather than reactive monitoring</li>
+        </ul>
+        <div class="chip-row" style="margin-bottom:16px">
+          <span class="chip chip-accent">Wearables</span><span class="chip">TENG Sensor</span>
+          <span class="chip">Machine Learning</span><span class="chip">Biomechanics</span>
+        </div>
+        <div class="project-foot">
+          <span class="status is-live">Dissertation complete</span>
+        </div>
+      </article>
+
+      <article class="card project reveal">
+        <div class="project-top">
+          <span class="project-icon" aria-hidden="true"><svg><use href="#i-brain"/></svg></span>
+          <div>
+            <h3>Deep Learning for Autonomous Driving</h3>
+            <span class="project-kind">Coursework EEN1072 &middot; DCU</span>
+          </div>
+        </div>
+        <p>Neural networks written from scratch against the KITTI autonomous-driving dataset.</p>
+        <ul class="project-points">
+          <li>From-scratch CNN for truck detection and depth estimation</li>
+          <li>RNN trajectory model for motion prediction</li>
+          <li>Trained and evaluated on the KITTI dataset</li>
+        </ul>
+        <div class="chip-row" style="margin-bottom:16px">
+          <span class="chip chip-accent">CNN</span><span class="chip">RNN</span>
+          <span class="chip">KITTI</span><span class="chip">Python</span>
+        </div>
+        <div class="project-foot">
+          <span class="status is-live">Coursework complete</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Skills ============ -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-num">Skills</p>
+      <h2>The stack I test with</h2>
+      <p>Filter by area. The last group is deliberately separated — that's what I'm learning or have academic exposure to, not what I've shipped with.</p>
+    </div>
+
+    <div class="skill-filters reveal" role="group" aria-label="Filter skills by area">
+      <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-btn" type="button" data-filter="automation" aria-pressed="false">Automation</button>
+      <button class="filter-btn" type="button" data-filter="api" aria-pressed="false">API &amp; Performance</button>
+      <button class="filter-btn" type="button" data-filter="data" aria-pressed="false">Data &amp; ETL</button>
+      <button class="filter-btn" type="button" data-filter="lang" aria-pressed="false">Languages</button>
+      <button class="filter-btn" type="button" data-filter="cicd" aria-pressed="false">CI/CD &amp; Cloud</button>
+      <button class="filter-btn" type="button" data-filter="ai" aria-pressed="false">AI-assisted</button>
+      <button class="filter-btn" type="button" data-filter="learning" aria-pressed="false">Exploring</button>
+    </div>
+
+    <div class="skill-groups">
+      <div class="card skill-group reveal" data-cat="automation">
+        <h3><svg aria-hidden="true"><use href="#i-code"/></svg> Test Automation</h3>
+        <div class="chip-row">
+          <span class="chip">Selenium</span><span class="chip">Playwright</span><span class="chip">Cypress</span>
+          <span class="chip">Appium</span><span class="chip">TestNG</span><span class="chip">Cucumber</span>
+          <span class="chip">Gherkin</span><span class="chip">BDD</span>
+        </div>
+      </div>
+
+      <div class="card skill-group reveal" data-cat="api">
+        <h3><svg aria-hidden="true"><use href="#i-api"/></svg> API &amp; Performance</h3>
+        <div class="chip-row">
+          <span class="chip">REST Assured</span><span class="chip">Postman</span><span class="chip">JMeter</span>
+        </div>
+      </div>
+
+      <div class="card skill-group reveal" data-cat="data">
+        <h3><svg aria-hidden="true"><use href="#i-db"/></svg> Data &amp; ETL</h3>
+        <div class="chip-row">
+          <span class="chip">SQL</span><span class="chip">MySQL</span><span class="chip">PostgreSQL</span>
+          <span class="chip">Oracle</span><span class="chip">Teradata</span><span class="chip">SQL Server</span>
+          <span class="chip">Ab Initio</span><span class="chip">Autosys</span><span class="chip">Control-M</span>
+          <span class="chip">Kafka</span>
+        </div>
+      </div>
+
+      <div class="card skill-group reveal" data-cat="lang">
+        <h3><svg aria-hidden="true"><use href="#i-code"/></svg> Languages</h3>
+        <div class="chip-row">
+          <span class="chip">Java</span><span class="chip">Python</span><span class="chip">Shell Scripting</span>
+        </div>
+      </div>
+
+      <div class="card skill-group reveal" data-cat="cicd">
+        <h3><svg aria-hidden="true"><use href="#i-cicd"/></svg> CI/CD, Tooling &amp; Cloud</h3>
+        <div class="chip-row">
+          <span class="chip">Jenkins</span><span class="chip">GitHub Actions</span><span class="chip">Git</span>
+          <span class="chip">Jira</span><span class="chip">Xray</span><span class="chip">Confluence</span>
+          <span class="chip">AWS</span>
+        </div>
+      </div>
+
+      <div class="card skill-group reveal" data-cat="ai">
+        <h3><svg aria-hidden="true"><use href="#i-spark"/></svg> AI-Assisted Testing</h3>
+        <div class="chip-row">
+          <span class="chip">GitHub Copilot</span><span class="chip">Playwright MCP</span>
+          <span class="chip">Claude Code</span><span class="chip">n8n</span><span class="chip">Prompt Engineering</span>
+        </div>
+      </div>
+
+      <div class="card skill-group reveal" data-cat="learning">
+        <h3><svg aria-hidden="true"><use href="#i-book"/></svg> Learning &amp; Academic Exposure</h3>
+        <div class="chip-row">
+          <span class="chip">PyTest</span><span class="chip">Docker</span><span class="chip">JavaScript</span>
+          <span class="chip">C / C++</span><span class="chip">MQTT</span><span class="chip">IoT &amp; Embedded</span>
+          <span class="chip">Security Testing</span><span class="chip">GxP / CSV</span>
+          <span class="chip">Locust</span><span class="chip">Bruno</span>
+        </div>
+        <p class="skill-note">Academic exposure or recent exploration — listed separately from production experience on purpose.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Education ============ -->
+<section class="section" id="education">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-num">Education</p>
+      <h2>Engineering foundations, then IoT</h2>
+    </div>
+
+    <div class="edu-grid">
+      <article class="card reveal">
+        <h3 class="edu-degree">MEng, Electronic &amp; Computer Engineering (IoT)</h3>
+        <p class="edu-school">Dublin City University</p>
+        <p class="edu-when">Sep 2025 &ndash; Aug 2026 &middot; Dublin, Ireland</p>
+        <div class="edu-modules">
+          <p class="aside-label">Modules</p>
+          <div class="chip-row">
+            <span class="chip">Data Analysis &amp; Machine Learning</span>
+            <span class="chip">Connected Embedded Systems</span>
+            <span class="chip">Real-Time DSP</span>
+            <span class="chip">Edge Programming (C/C++ &amp; Rust)</span>
+            <span class="chip">Web Application Development</span>
+            <span class="chip">Network Performance</span>
+            <span class="chip">Security for IoT &amp; Edge Networks</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <h3 class="edu-degree">BE, Electrical &amp; Electronics Engineering</h3>
+        <p class="edu-school">PSNA College of Engineering and Technology</p>
+        <p class="edu-when">Aug 2011 &ndash; Apr 2015 &middot; Tamil Nadu, India</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Credentials ============ -->
+<section class="section" id="credentials">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-num">Credentials</p>
+      <h2>Certifications, awards &amp; training</h2>
+    </div>
+
+    <div class="cred-grid">
+      <article class="card cred reveal">
+        <div class="cred-media">
+          <img src="./assets/img/cert-istqb.webp" width="900" height="580" loading="lazy" decoding="async"
+               alt="ISTQB Certified Tester Foundation Level v4.0 certificate awarded to Ganeshkumar Chelladurai">
+        </div>
+        <div class="cred-body">
+          <h3>ISTQB&reg; Certified Tester — Foundation Level (CTFL v4.0)</h3>
+          <p class="cred-issuer">ISTQB &middot; 29 Dec 2024</p>
+          <p class="cred-id">Credential ID <b>CTFL-141388</b></p>
+        </div>
+      </article>
+
+      <article class="card cred reveal">
+        <div class="cred-media">
+          <img src="./assets/img/cert-aws.webp" width="900" height="693" loading="lazy" decoding="async"
+               alt="AWS Certified Cloud Practitioner certificate awarded to Ganeshkumar Chelladurai">
+        </div>
+        <div class="cred-body">
+          <h3>AWS Certified Cloud Practitioner</h3>
+          <p class="cred-issuer">Amazon Web Services &middot; Dec 2024 &ndash; Dec 2027</p>
+          <p class="cred-id">Credential ID <b>e31f3c69191f41208c82f8994e43667c</b></p>
+        </div>
+      </article>
+
+      <article class="card cred reveal">
+        <div class="cred-media">
+          <img src="./assets/img/award-transunion.webp" width="900" height="595" loading="lazy" decoding="async"
+               alt="Recognition award certificate from TransUnion for automation framework design and QA process improvements">
+        </div>
+        <div class="cred-body">
+          <h3>Recognition for Automation Framework Design</h3>
+          <p class="cred-issuer">TransUnion</p>
+          <p class="cred-id">Awarded for QA process improvement</p>
+        </div>
+      </article>
+    </div>
+
+    <h3 style="margin-top:44px;font-size:1.1rem" class="reveal">Awards</h3>
+    <div class="awards">
+      <div class="award reveal">
+        <svg aria-hidden="true"><use href="#i-award"/></svg>
+        <span>Quarterly Performance Award &mdash; TransUnion</span>
+        <span class="award-when">Q3 2024</span>
+      </div>
+      <div class="award reveal">
+        <svg aria-hidden="true"><use href="#i-award"/></svg>
+        <span>Mentorship Excellence &mdash; TransUnion</span>
+        <span class="award-when">Mar 2023</span>
+      </div>
+    </div>
+
+    <div class="card courses reveal" style="margin-top:28px">
+      <p class="aside-label">Training completed (courses, not certifications)</p>
+      <div class="chip-row">
+        <span class="chip">Pharma Computer System Validation &middot; Udemy</span>
+        <span class="chip">The Complete Python Bootcamp</span>
+        <span class="chip">JMeter: Performance &amp; Load Testing</span>
+        <span class="chip">Postman Essential Training</span>
+        <span class="chip">API Testing Foundations</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Contact ============ -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-card reveal">
+      <p class="section-num" style="justify-content:center">Contact</p>
+      <h2>Let's talk about your test strategy</h2>
+      <p>
+        I'm open to full-time SDET and QA Automation roles in Dublin, Cork, Galway and Limerick,
+        or remote within Ireland. The fastest way to reach me is email or LinkedIn.
+      </p>
+
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:ganeshkumar.chelladurai.sdet@gmail.com">
+          <svg aria-hidden="true"><use href="#i-mail"/></svg> Email me
+        </a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/ganeshkumar-chelladurai-sdet/" target="_blank" rel="noopener noreferrer">
+          <svg aria-hidden="true"><use href="#i-linkedin"/></svg> Connect on LinkedIn
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/ganeshkumar-chelladurai-sdet" target="_blank" rel="noopener noreferrer">
+          <svg aria-hidden="true"><use href="#i-github"/></svg> GitHub
+        </a>
+        <a class="btn btn-ghost" href="./public/Resume.pdf" download>
+          <svg aria-hidden="true"><use href="#i-download"/></svg> CV
+        </a>
+      </div>
+
+      <p class="contact-meta">
+        <span><svg aria-hidden="true"><use href="#i-pin"/></svg> Dublin, Ireland</span>
+        <span><svg aria-hidden="true"><use href="#i-mail"/></svg> ganeshkumar.chelladurai.sdet@gmail.com</span>
+        <span><svg aria-hidden="true"><use href="#i-award"/></svg> Eligible for the Critical Skills Employment Permit</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>&copy; <span id="year">2026</span> Ganeshkumar Chelladurai</p>
+    <p>
+      <code>built with HTML, CSS &amp; vanilla JS &mdash; no framework, no tracking</code>
+      &nbsp;&middot;&nbsp;
+      <a href="https://github.com/ganeshkumar-chelladurai-sdet/portfolio" target="_blank" rel="noopener noreferrer">source</a>
+    </p>
+  </div>
+</footer>
+
+<script src="./assets/js/main.js" defer></script>
 </body>
 </html>
-<!-- TODO 2: Add Your previous projects' HTML into the public folder -->
-
-<!-- TODO 3: Take screenshots of your project previews and add the images to the images folder -->
-
-<!-- TODO 4: Add titles/subtitles etc. -->
-
-<!-- TODO 5: Add a link to the project pages -->
-
-<!-- TODO 6: Add images to show the project previews
-HINT for TODO 6: You can use the height attribute set to 200 to make the image smaller:
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-height -->
-
-<!-- TODO 7: Add the Contact Me and About Me page links -->
