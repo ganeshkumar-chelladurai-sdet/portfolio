@@ -27,9 +27,18 @@
   --shadow:     0 1px 2px rgba(0,0,0,.4), 0 12px 32px -12px rgba(0,0,0,.6);
   --shadow-hi:  0 1px 2px rgba(0,0,0,.4), 0 24px 56px -20px rgba(0,0,0,.75);
 
-  --font:       'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-disp:  'Space Grotesk', var(--font);
-  --font-mono:  'JetBrains Mono', ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  /* Apple ships SF Pro on every Mac, iPhone and iPad, so ask the OS for it
+     rather than serving a webfont — SF Pro can't be self-hosted under Apple's
+     licence anyway. Non-Apple devices fall back to their own native UI face.
+     Nothing is downloaded, so there is no flash of unstyled text. */
+  --font:       -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display',
+                'Segoe UI Variable Text', 'Segoe UI', Roboto, 'Helvetica Neue',
+                Arial, sans-serif;
+  --font-disp:  -apple-system, BlinkMacSystemFont, 'SF Pro Display',
+                'Segoe UI Variable Display', 'Segoe UI', Roboto, 'Helvetica Neue',
+                Arial, sans-serif;
+  --font-mono:  ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas,
+                'Liberation Mono', monospace;
 
   --container:  1140px;
   --gutter:     clamp(16px, 4vw, 40px);
@@ -101,17 +110,20 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
-  font-size: 16px;
+  font-size: 17px;              /* Apple's base body size */
   line-height: 1.65;
+  letter-spacing: -.01em;       /* SF is drawn tight; match it */
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;         /* never fake a weight the family doesn't have */
   overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
   font-family: var(--font-disp);
   font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -.02em;
+  line-height: 1.12;
+  letter-spacing: -.022em;      /* tightens further at display sizes below */
   margin: 0;
   text-wrap: balance;
 }
@@ -171,7 +183,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   gap: 10px;
   font-family: var(--font-mono);
   font-size: .78rem;
-  letter-spacing: .12em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 14px;
@@ -184,7 +196,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   opacity: .6;
 }
 
-.section-head h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); }
+.section-head h2 { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 700; letter-spacing: -.03em; }
 .section-head p { color: var(--text-2); margin-top: 12px; font-size: 1.02rem; }
 
 /* ---------- Buttons and chips ---------- */
@@ -370,9 +382,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 .hero h1 {
-  font-size: clamp(2.35rem, 6.2vw, 4rem);
+  font-size: clamp(2.5rem, 6.4vw, 4.2rem);
   margin: 20px 0 0;
-  letter-spacing: -.035em;
+  font-weight: 700;
+  letter-spacing: -.038em;
 }
 
 .hero-role {
@@ -387,7 +400,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   color: transparent;
 }
 
-.hero-sub { color: var(--text-2); font-size: 1.05rem; max-width: 54ch; margin-top: 18px; }
+.hero-sub { color: var(--text-2); font-size: 1.12rem; line-height: 1.6; max-width: 52ch; margin-top: 18px; }
 
 .hero-meta {
   display: flex;
@@ -474,9 +487,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-family: var(--font-disp);
   font-weight: 600;
   letter-spacing: -.035em;
-  font-size: clamp(1.7rem, 3.6vw, 2.4rem);
+  font-size: clamp(1.8rem, 3.6vw, 2.5rem);
   color: var(--text);
   line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 .stat-num sup { color: var(--accent); font-size: .5em; top: -.7em; margin-left: 2px; }
 .stat-label { color: var(--text-3); font-size: .84rem; margin-top: 9px; }
@@ -498,7 +512,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   gap: clamp(28px, 4vw, 52px);
   align-items: start;
 }
-.about-prose p { color: var(--text-2); font-size: 1.04rem; }
+.about-prose p { color: var(--text-2); font-size: 1.08rem; line-height: 1.7; }
 .about-prose strong { color: var(--text); font-weight: 600; }
 
 .about-aside { display: grid; gap: 14px; }
@@ -790,7 +804,7 @@ ul { margin: 0; padding: 0; list-style: none; }
     radial-gradient(ellipse 70% 130% at 50% 0%, var(--accent-dim), transparent 70%),
     var(--surface);
 }
-.contact-card h2 { font-size: clamp(1.8rem, 4.4vw, 2.6rem); }
+.contact-card h2 { font-size: clamp(1.9rem, 4.4vw, 2.7rem); font-weight: 700; letter-spacing: -.03em; }
 .contact-card > p { color: var(--text-2); margin: 16px auto 0; max-width: 52ch; }
 .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 30px; }
 .contact-meta {
