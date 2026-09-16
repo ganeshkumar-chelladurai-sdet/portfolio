@@ -51,10 +51,16 @@
     var root = document.documentElement;
     root.classList.add('js-reveal');
 
-    // Watchdog: if nothing has revealed after 4s the observer isn't reporting
-    // (background tab, blocked main.js, no IntersectionObserver) — show everything.
+    // Watchdog: after 4s, measure whether anything is ACTUALLY visible rather
+    // than trusting that a class was added — a CSS specificity slip can apply
+    // .is-in and still leave the page blank. If nothing is showing, give up on
+    // the effect and reveal everything.
     window.setTimeout(function () {
-      if (!document.querySelector('.reveal.is-in')) root.classList.remove('js-reveal');
+      var els = document.querySelectorAll('.reveal');
+      for (var i = 0; i < els.length; i++) {
+        if (getComputedStyle(els[i]).opacity === '1') return;
+      }
+      root.classList.remove('js-reveal');
     }, 4000);
   })();
 </script>

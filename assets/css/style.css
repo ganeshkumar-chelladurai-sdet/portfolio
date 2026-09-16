@@ -837,7 +837,9 @@ ul { margin: 0; padding: 0; list-style: none; }
    added once JS is running, and a watchdog removes it again if the observer
    never reports (background tab, blocked script, old browser). */
 :root.js-reveal .reveal { opacity: 0; transform: translateY(18px); }
-.reveal.is-in {
+/* Must stay scoped the same way as the rule above, or it loses on specificity
+   and nothing ever becomes visible. */
+:root.js-reveal .reveal.is-in {
   opacity: 1;
   transform: none;
   transition: opacity .6s var(--ease), transform .6s var(--ease);
