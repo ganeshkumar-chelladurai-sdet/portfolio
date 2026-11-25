@@ -190,20 +190,18 @@
   var term = $('#terminal-body');
   if (term) {
     var SCRIPT = [
-      { text: '$ mvn -q test -Dsuite=regression', cls: 't-prompt', pause: 420 },
+      { text: '$ pytest -q', cls: 't-prompt', pause: 420 },
       { text: '', pause: 120 },
-      { text: 'SeleniumLoginFramework :: parallel(4)', cls: 't-dim', pause: 300 },
-      { text: '  PASS  valid credentials        0.84s', cls: 't-pass', pause: 170 },
-      { text: '  PASS  invalid password         0.61s', cls: 't-pass', pause: 170 },
-      { text: '  PASS  auto-redirect dialog     1.12s', cls: 't-pass', pause: 170 },
-      { text: '  PASS  role dropdown select     0.73s', cls: 't-pass', pause: 240 },
+      { text: 'python-testing-portfolio', cls: 't-dim', pause: 300 },
+      { text: '  PASS  ui    Playwright + POM', cls: 't-pass', pause: 190 },
+      { text: '  PASS  api   requests -> Flask', cls: 't-pass', pause: 190 },
+      { text: '  PASS  etl   pandas -> SQLite', cls: 't-pass', pause: 260 },
       { text: '', pause: 120 },
-      { text: '$ pytest -q api/ etl/', cls: 't-prompt', pause: 420 },
-      { text: '  PASS  api contract + chaining  1.30s', cls: 't-pass', pause: 170 },
-      { text: '  PASS  etl source-to-target     2.05s', cls: 't-pass', pause: 300 },
+      { text: '31 passed', cls: 't-key', pause: 220 },
+      { text: 'CI: GitHub Actions + Jenkins in Docker', cls: 't-dim', pause: 300 },
       { text: '', pause: 120 },
-      { text: 'Tests: 6 passed, 6 total   Time: 6.65s', cls: 't-key', pause: 260 },
-      { text: 'Coverage +30%  Manual -50%  Release -20%', cls: 't-warn', pause: 300 },
+      { text: '~30% higher regression coverage', cls: 't-warn', pause: 200 },
+      { text: '~20% faster release cycles', cls: 't-warn', pause: 300 },
       { text: '', pause: 120 },
       { text: '$ open-to-work --loc "Dublin, IE" --remote', cls: 't-prompt', pause: 300 }
     ];

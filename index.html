@@ -192,13 +192,16 @@
       </div>
     </div>
 
-    <div class="terminal reveal" role="img" aria-label="Simulated terminal showing a regression suite of six tests passing in 6.65 seconds, summarising approximately 30 percent higher regression coverage, approximately 50 percent less manual testing effort and approximately 20 percent faster release cycles.">
+    <div class="reveal">
+    <div class="terminal" role="img" aria-label="Illustrative terminal graphic. It shows a pytest run of the Python Testing Portfolio with its UI, API and ETL layers passing, 31 tests in total, running in GitHub Actions and Jenkins in Docker, alongside approximately 30 percent higher regression coverage and approximately 20 percent faster release cycles. It is not the output of a live test run.">
       <div class="terminal-bar" aria-hidden="true">
         <i></i><i></i><i></i>
-        <span class="terminal-title">regression-suite — zsh</span>
+        <span class="terminal-title">python-testing-portfolio — illustrative</span>
       </div>
       <!-- Final state is rendered server-side; main.js replays it as an animation. -->
-      <div class="terminal-body" id="terminal-body" aria-hidden="true"><span class="ln t-prompt">$ mvn -q test -Dsuite=regression</span><span class="ln">&nbsp;</span><span class="ln t-dim">SeleniumLoginFramework :: parallel(4)</span><span class="ln t-pass">  PASS  valid credentials        0.84s</span><span class="ln t-pass">  PASS  invalid password         0.61s</span><span class="ln t-pass">  PASS  auto-redirect dialog     1.12s</span><span class="ln t-pass">  PASS  role dropdown select     0.73s</span><span class="ln">&nbsp;</span><span class="ln t-prompt">$ pytest -q api/ etl/</span><span class="ln t-pass">  PASS  api contract + chaining  1.30s</span><span class="ln t-pass">  PASS  etl source-to-target     2.05s</span><span class="ln">&nbsp;</span><span class="ln t-key">Tests: 6 passed, 6 total   Time: 6.65s</span><span class="ln t-warn">Coverage +30%  Manual -50%  Release -20%</span><span class="ln">&nbsp;</span><span class="ln t-prompt">$ open-to-work --loc &quot;Dublin, IE&quot; --remote</span></div>
+      <div class="terminal-body" id="terminal-body" aria-hidden="true"><span class="ln t-prompt">$ pytest -q</span><span class="ln">&nbsp;</span><span class="ln t-dim">python-testing-portfolio</span><span class="ln t-pass">  PASS  ui    Playwright + POM</span><span class="ln t-pass">  PASS  api   requests -&gt; Flask</span><span class="ln t-pass">  PASS  etl   pandas -&gt; SQLite</span><span class="ln">&nbsp;</span><span class="ln t-key">31 passed</span><span class="ln t-dim">CI: GitHub Actions + Jenkins in Docker</span><span class="ln">&nbsp;</span><span class="ln t-warn">~30% higher regression coverage</span><span class="ln t-warn">~20% faster release cycles</span><span class="ln">&nbsp;</span><span class="ln t-prompt">$ open-to-work --loc &quot;Dublin, IE&quot; --remote</span></div>
+    </div>
+    <p class="terminal-note">Illustrative output, not a live test run. The 31-test figure comes from the Python Testing Portfolio repository.</p>
     </div>
   </div>
 </section>
@@ -284,7 +287,7 @@
   <div class="container">
     <div class="section-head reveal">
       <p class="section-num">Experience</p>
-      <h2>Nine years shipping tested software</h2>
+      <h2>Ten years shipping tested software</h2>
       <p>From ETL and data warehousing at Cognizant to owning automation strategy and leading engineers at TransUnion.</p>
     </div>
 
@@ -559,9 +562,9 @@
       <div class="card skill-group reveal" data-cat="cicd">
         <h3><svg aria-hidden="true"><use href="#i-cicd"/></svg> CI/CD, Tooling &amp; Cloud</h3>
         <div class="chip-row">
-          <span class="chip">Jenkins</span><span class="chip">GitHub Actions</span><span class="chip">Git</span>
-          <span class="chip">Jira</span><span class="chip">Xray</span><span class="chip">Confluence</span>
-          <span class="chip">AWS</span>
+          <span class="chip">Jenkins</span><span class="chip">GitHub Actions</span><span class="chip">Docker</span>
+          <span class="chip">Git</span><span class="chip">Jira</span><span class="chip">Xray</span>
+          <span class="chip">Confluence</span><span class="chip">AWS</span>
         </div>
       </div>
 
@@ -584,7 +587,7 @@
       <div class="card skill-group reveal" data-cat="learning">
         <h3><svg aria-hidden="true"><use href="#i-book"/></svg> Learning &amp; Academic Exposure</h3>
         <div class="chip-row">
-          <span class="chip">Docker</span><span class="chip">JavaScript</span>
+          <span class="chip">JavaScript</span>
           <span class="chip">Security Testing</span><span class="chip">GxP / CSV</span>
           <span class="chip">Locust</span><span class="chip">Bruno</span>
         </div>

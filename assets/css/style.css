@@ -470,6 +470,16 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 @keyframes blink { 50% { opacity: 0; } }
 
+.terminal-note {
+  margin: 12px 0 0;
+  font-family: var(--font-mono);
+  font-size: .74rem;
+  line-height: 1.5;
+  color: var(--text-3);
+  text-align: center;
+  letter-spacing: -.01em;
+}
+
 /* ---------- Stats ---------- */
 .stats {
   display: grid;
