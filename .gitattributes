@@ -1,0 +1,15 @@
+# Binary assets must never have line endings rewritten. Without this, Git
+# sniffs the ReportLab-generated PDF as text and converts LF to CRLF on
+# checkout, corrupting the file on Windows clones.
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.webp  binary
+*.ico   binary
+
+# Text sources are stored with LF in the repository.
+*.html  text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.md    text eol=lf
